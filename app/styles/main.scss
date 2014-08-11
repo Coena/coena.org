@@ -1,7 +1,7 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 // bower:scss
-@import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 @import "variables";
@@ -52,6 +52,12 @@ html, body {
 
 /* Custom page header */
 .header {
+    height: 120px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
 
     h1 {
         margin-top: 0;
@@ -59,7 +65,8 @@ html, body {
         height: 75px;
         line-height: 75px;
         vertical-align: middle;
-        padding: 0 15px;   
+        padding: 0 15px;
+        background: $white;
       
         span {
             font-weight: 400;
@@ -80,7 +87,7 @@ html, body {
         li {
             a {
                 color: $white;
-                padding: 10px 30px;
+                padding: 0 30px;
                 border-radius: 0;
                 &:hover {
                     background: $green;
@@ -91,6 +98,14 @@ html, body {
     }
 }
 
+.leftNav {
+    position: fixed;
+    top: 120px;
+    height: calc(100% - 120px);
+    width: 75px;
+    background: $white;
+}
+
 #contents {
   margin: 0;
   padding: 0;
@@ -99,6 +114,7 @@ html, body {
   
   section {
     min-height: 100%;
+    padding: 120px 0 0 75px;
     position: relative;
   }
 }
@@ -110,19 +126,19 @@ h2 {
   font-weight: 400;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
 /* Homepage */
 #home {
     .jumbotron {
         background: url("#{$base-url-img}slide1.png") center center;
         background-size: cover;
-    }   
+        margin: 0;
+    }
+
+    .col-md-3 {
+        -moz-box-shadow: inset 5px -5px 5px #eee;
+        -webkit-box-shadow: inset 5px -5px 5px #eee;
+        box-shadow: inset 5px -5px 5px #eee;
+    }
 }
 
 /* What is Coena page */
@@ -130,6 +146,7 @@ h2 {
     .jumbotron {
         background: url("#{$base-url-img}slide2.png") center center;
         background-size: cover;
+        min-height: 600px;
     }   
 }
 
@@ -202,4 +219,77 @@ h2 {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}
+
+/* fix firefox responsive images */
+.img-responsive {
+    width: 100%
 }
