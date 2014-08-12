@@ -13,6 +13,7 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/font-awesome-4.1.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
@@ -45,13 +46,21 @@
     </ul>
   </div>
 
-  <div class="leftNav text-center">
-    <p class="spacer20">&nbsp;</p>
-    <p>Collapse</p>
-    <p class="spacer20">&nbsp;</p>
-    <p>Search</p>
-    <p class="spacer20">&nbsp;</p>
-    <p>Sign in</p>
+  <div class="left-nav text-center">
+    <div class="collapse-left-nav">
+      <p><i class="fa fa-angle-double-left"></i></p>
+    </div>
+    <div class="search-site">
+      <p><i class="fa fa-search fa-lg"></i></p>
+    </div>
+    <div class="sign-in">
+      <img src="images/sign-in.png" alt="Sign in" />
+      <p>Sign in</p>
+    </div>
+  </div>
+  
+  <div class="left-nav-activator text-center hidden">
+    <p><i class="fa fa-angle-double-right"></i></p>
   </div>
 
 
@@ -115,6 +124,7 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/PreloadJS/lib/preloadjs-0.4.1.combined.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

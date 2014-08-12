@@ -31,81 +31,112 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 
 html, body {
-    height: 100%;
-    background-color: $bg-color;
-    font-family: 'roboto_slabregular', sans-serif;
-    color: $text-color;
+  height: 100%;
+  background-color: $bg-color;
+  font-family: 'roboto_slablight', sans-serif;
+  color: $text-color;
 }
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-    height: 120px;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
+  height: 120px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
 
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0;
-        height: 75px;
-        line-height: 75px;
-        vertical-align: middle;
-        padding: 0 15px;
-        background: $white;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 75px;
+    line-height: 75px;
+    vertical-align: middle;
+    padding: 0 15px;
+    background: $white;
       
-        span {
-            font-weight: 400;
-            font-size: 14px;
-            text-transform: uppercase;
-            vertical-align: text-bottom;
-            line-height: 30px;
-        }
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      text-transform: uppercase;
+      vertical-align: text-bottom;
+      line-height: 30px;
     }
+  }
     
-    .nav {
-        background: $green;
-        line-height: 45px;
-        font-size: 16px;
-        text-transform: uppercase;
-        padding: 0 30px;
+  .nav {
+    background: $green;
+    line-height: 45px;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0 30px;
       
-        li {
-            a {
-                color: $white;
-                padding: 0 30px;
-                border-radius: 0;
-                &:hover {
-                    background: $green;
-                    text-decoration: underline;
-                }
-            }
+    li {
+      a {
+        color: $white;
+        padding: 0 30px;
+        border-radius: 0;
+        &:hover {
+          background: $green;
+          text-decoration: underline;
         }
+      }
     }
+  }
 }
 
-.leftNav {
-    position: fixed;
-    top: 120px;
-    height: calc(100% - 120px);
-    width: 75px;
-    background: $white;
+.left-nav {
+  position: fixed;
+  top: 120px;
+  height: calc(100% - 120px);
+  width: 75px;
+  background: $white;
+  font-family: 'roboto_slabregular', sans-serif;
+  font-size: 12px;
+  z-index: 10;
+  
+  & > div {
+    padding: 15px 0;
+    border-bottom: 1px solid #e3e3e9;
+    cursor: pointer;
+    
+    & p {
+      margin: 0;
+    }
+  }
+}
+
+.left-nav-activator {
+  position: fixed;
+  left: 0;
+  top: 120px;
+  padding: 5px 0;
+  width: 40px;
+  z-index: 10;
+  background: $white;
+  cursor: pointer;
+  -webkit-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  
+  & p {
+    margin: 0;
+  }
 }
 
 #contents {
@@ -130,31 +161,31 @@ h2 {
 
 /* Homepage */
 #home {
-    .jumbotron {
-        background: url("#{$base-url-img}slide1.png") center center;
-        background-size: cover;
-        margin: 0;
-    }
+  .jumbotron {
+    background: url("#{$base-url-img}slide1.png") center center;
+    background-size: cover;
+    margin: 0;
+  }
 
-    .col-md-3 {
-        -moz-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
-        -webkit-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
-        box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
-    }
+  .col-md-3 {
+    -moz-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
+  }
 }
 
 /* What is Coena page */
 #what_is_coena {
-    .jumbotron {
-        background: url("#{$base-url-img}slide2.png") center center;
-        background-size: cover;
-        min-height: 600px;
-    }   
+  .jumbotron {
+    background: url("#{$base-url-img}slide2.png") center center;
+    background-size: cover;
+    min-height: 600px;
+  }   
 }
 
 /* Generic classes */
 .green {
-    color: $green;
+  color: $green;
 }
 
 .green_back {
@@ -162,7 +193,7 @@ h2 {
 }
 
 .blue {
-    color: $blue;
+  color: $blue;
 }
 
 .blue_back {
@@ -170,35 +201,35 @@ h2 {
 }
 
 .custom_label {
-    margin: 2px auto !important;
-    padding: 0;
-    text-align: center;
-    line-height: 47px;
-    height: 47px;
-    font-family: 'roboto_slablight', sans-serif;
-    font-size: 32px !important;
-    width: 400px;
-    color: $white;
+  margin: 2px auto !important;
+  padding: 0;
+  text-align: center;
+  line-height: 47px;
+  height: 47px;
+  font-family: 'roboto_slablight', sans-serif;
+  font-size: 32px !important;
+  width: 400px;
+  color: $white;
 }
 
 .custom_label_lg {
-    width: 485px;
+  width: 485px;
 }
 
 .custom_label_sm {
-    width: 315px;
+  width: 315px;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .spacer20 {
-    margin: 0;
-    padding: 0;
-    line-height: 20px;
-    height: 20px;
-    font-size: 15px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  height: 20px;
+  font-size: 15px;
 }
 
 .border-top {
@@ -215,17 +246,17 @@ h2 {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+  .container {
+    max-width: 730px;
+  }
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 
