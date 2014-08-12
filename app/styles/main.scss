@@ -109,6 +109,9 @@ html, body {
   font-family: 'roboto_slabregular', sans-serif;
   font-size: 12px;
   z-index: 10;
+  -webkit-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
   
   & > div {
     padding: 15px 0;
@@ -130,9 +133,6 @@ html, body {
   z-index: 10;
   background: $white;
   cursor: pointer;
-  -webkit-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.05);
   
   & p {
     margin: 0;
