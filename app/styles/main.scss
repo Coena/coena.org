@@ -5,8 +5,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // endbower
 
 @import "variables";
-
 @import "animations";
+@import "same-height-columns";
 
 @font-face {
   font-family: 'roboto_slabregular';
@@ -137,9 +137,9 @@ h2 {
     }
 
     .col-md-3 {
-        -moz-box-shadow: inset 5px -5px 5px #eee;
-        -webkit-box-shadow: inset 5px -5px 5px #eee;
-        box-shadow: inset 5px -5px 5px #eee;
+        -moz-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
+        -webkit-box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 4px -4px 10px rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -201,6 +201,16 @@ h2 {
     font-size: 15px;
 }
 
+.border-top {
+  border-top: 5px solid;
+  &.border-green {
+    border-color: $green;
+  }
+  &.border-blue {
+    border-color: $blue;
+  }
+}
+
 
 
 /* Responsive: Portrait tablets and up */
@@ -219,75 +229,5 @@ h2 {
 }
 
 
-/* columns of same height styles */
-.container-xs-height {
-    display:table;
-    padding-left:0px;
-    padding-right:0px;
-}
-.row-xs-height {
-    display:table-row;
-}
-.col-xs-height {
-    display:table-cell;
-    float:none;
-}
-@media (min-width: 768px) {
-    .container-sm-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-sm-height {
-        display:table-row;
-    }
-    .col-sm-height {
-        display:table-cell;
-        float:none;
-    }
-}
-@media (min-width: 992px) {
-    .container-md-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-md-height {
-        display:table-row;
-    }
-    .col-md-height {
-        display:table-cell;
-        float:none;
-    }
-}
-@media (min-width: 1200px) {
-    .container-lg-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-lg-height {
-        display:table-row;
-    }
-    .col-lg-height {
-        display:table-cell;
-        float:none;
-    }
-}
 
-/* vertical alignment styles */
-.col-top {
-    vertical-align:top;
-}
-.col-middle {
-    vertical-align:middle;
-}
-.col-bottom {
-    vertical-align:bottom;
-}
-
-/* fix firefox responsive images */
-.img-responsive {
-    width: 100%
-}
 

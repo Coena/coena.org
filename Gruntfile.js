@@ -14,6 +14,9 @@ module.exports = function (grunt) {
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
+  
+    // Load additional NPM tasks
+    grunt.loadNpmTasks('grunt-favicons');
 
     // Configurable paths
     var config = {
@@ -26,6 +29,23 @@ module.exports = function (grunt) {
 
         // Project settings
         config: config,
+      
+        favicons: {
+            options: {
+                trueColor: true,
+                appleTouchBackgroundColor: '#ffffff',
+                coast: true,
+                windowsTile: true,
+                tileBlackWhite: false,
+                tileColor: '#ffffff',
+                html: 'build/out/index.html',
+                HTMLPrefix: "/images/icons/"
+            },
+            icons: {
+                src: 'images/favicon.png',
+                dest: 'build/images/icons'
+            }
+        },
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
@@ -57,6 +77,7 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
+                    'Gruntfile.js',
                     '<%= config.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '.tmp/scripts/{,*/}*.js',
@@ -249,14 +270,21 @@ module.exports = function (grunt) {
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
-                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images', '<%= config.dist %>/styles/fonts'],
+                patterns: {
+                    cssFonts: [[/url\(fonts\/(.*?)\)/, 'Replacing reference to fonts']]
+                }
             },
             html: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/styles/{,*/}*.css']
+            css: ['<%= config.dist %>/styles/{,*/}*.css'],
+            cssFonts: ['<%= config.dist %>/styles/{,*/}*.css']
         },
 
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
+            options: {
+                cache: false
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -403,6 +431,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'coffee:dist',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
@@ -426,12 +455,14 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'connect:test',
+            'coffee',
             'mocha'
         ]);
     });
 
     grunt.registerTask('build', [
         'clean:dist',
+        'coffe',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
@@ -442,10 +473,12 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
+        'favicons',
         'htmlmin'
     ]);
 
     grunt.registerTask('default', [
+        'clean',
         'newer:jshint',
         'test',
         'build'
