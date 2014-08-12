@@ -147,7 +147,8 @@ html, body {
 h2 {
   font-family: 'roboto_slablight', sans-serif;
   font-size: 24px;
-  padding: 10px 0;
+  padding: 0 0 20px 0;
+  margin: 0;
   font-weight: 400;
 }
 
@@ -224,6 +225,10 @@ h2 {
   font-size: 15px;
 }
 
+.p35 {
+  padding: 35px;
+}
+
 .border-top {
   border-top: 5px solid;
   &.border-green {
@@ -233,6 +238,26 @@ h2 {
     border-color: $blue;
   }
 }
+
+/* Bootstrap overwrite */
+.form-control {
+  box-shadow: none;
+}
+
+.btn-custom {
+  border: 0;
+  border-radius: 0;
+  background: $blue;
+  color: $white;
+  font-size: 16px;
+  padding: 6px 35px;
+  
+  &:hover {
+    background: $green;
+    color: $white;
+  }
+}
+
 
 
 
