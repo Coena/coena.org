@@ -6,6 +6,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import "variables";
 
+@import "animations";
+
 @font-face {
   font-family: 'roboto_slabregular';
     src: url('fonts/RobotoSlab-Regular-webfont.eot');
@@ -214,11 +216,6 @@ h2 {
         padding-left: 0;
         padding-right: 0;
     }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
 }
 
 
@@ -293,3 +290,4 @@ h2 {
 .img-responsive {
     width: 100%
 }
+

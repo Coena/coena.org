@@ -1,0 +1,127 @@
+@-webkit-keyframes slideInLeft { 
+  from { 
+    margin-left: 0;
+    float: left;
+    opacity: 0;
+  } 
+  to { 
+    margin-left: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+@-moz-keyframes slideInLeft { 
+  from { 
+    margin-left: 0;
+    float: left;
+    opacity: 0;
+  } 
+  to { 
+    margin-left: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+@keyframes slideInLeft { 
+  from { 
+    margin-left: 0;
+    float: left;
+    opacity: 0;
+  } 
+  to { 
+    margin-left: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+
+@-webkit-keyframes slideInRight { 
+  from { 
+    margin-right: 0;
+    float: right;
+    opacity: 0;
+  } 
+  to { 
+    margin-right: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+@-moz-keyframes slideInRight { 
+  from { 
+    margin-right: 0;
+    float: right;
+    opacity: 0;
+  } 
+  to { 
+    margin-right: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+@keyframes slideInRight { 
+  from { 
+    margin-right: 0;
+    float: right;
+    opacity: 0;
+  } 
+  to { 
+    margin-right: auto;
+    float: none;
+    opacity: 1;
+  } 
+}
+
+.slide-in-left {
+	opacity:0;  
+	-webkit-animation:slideInLeft ease-in 1;  
+	-moz-animation:slideInLeft ease-in 1;
+	animation:slideInLeft ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+
+.slide-in-right {
+	opacity:0;  
+	-webkit-animation:slideInRight ease-in 1;  
+	-moz-animation:slideInRight ease-in 1;
+	animation:slideInRight ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+
+.one {
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
+
+.two {
+-webkit-animation-delay: 1s;
+-moz-animation-delay:1s;
+animation-delay: 1s;
+}
+
+.three {
+-webkit-animation-delay: 1.5s;
+-moz-animation-delay: 1.5s;
+animation-delay: 1.5s;
+}
+
+.four {
+-webkit-animation-delay: 2s;
+-moz-animation-delay: 2s;
+animation-delay: 2s;
+}
